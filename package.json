@@ -1,0 +1,26 @@
+{
+  "name": "profiliator",
+  "version": "1.0.0",
+  "description": "Creates a dynanmic team profile web page based on user answers to console questions.",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/robertpdavis/profiliator.git"
+  },
+  "author": "Rob Davis",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/robertpdavis/profiliator/issues"
+  },
+  "homepage": "https://github.com/robertpdavis/profiliator#readme",
+  "dependencies": {
+    "inquirer": "^8.2.3",
+    "jest": "^28.0.2"
+  }
+}
