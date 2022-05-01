@@ -11,21 +11,42 @@ const Prompter = require('./lib/Prompter');
 //Load other files
 const pageHTML = require('./src/template.js');
 
+const prompter = new Prompter();
+const members = [];
+
+function createMembers() {
+    let member;
+    let isManager = (members.length === 0);
+
+    prompter.addMember(isManager).then((answerList) => {
+        if (isManager) {
+            member = new Manager(answerList.mgrName, answerList.mgrId, answerList.mgrEmail, answerList.mgrPhone);
+        } else if (answerList.newMember === "Engineer") {
+            member = new Engineer(answerList.name, answerList.id, answerList.email, answerList.github);
+        } else {
+            member = new Intern(answerList.name, answerList.id, answerList.email, answerList.school);
+        }
+
+        members.push(member);
+        console.log(members);
+
+        if (isManager || answerList.choice) {
+            createMembers();
+        }
+    })
+}
 
 
-// const Employee = require('./lib/Employee');
+function init() {
 
-// const employee = new Employee('Fred', 1, 'fred@company.com');
-
-// console.log(`Name: ${employee.name}`);
+    createMembers();
 
 
-const manager = new Manager('Fred', 1, 'fred@company.com', '1234 5678');
 
-console.log(`Name: ${manager.getRole()}`);
+}
 
-console.log("ok");
 
+init();
 
 
 
