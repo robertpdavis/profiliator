@@ -1,0 +1,126 @@
+/* Profiliator Style Sheet */
+
+/* Root variables for colour scheme */
+:root {
+    --body-background-col: #ffffff;
+    --header-background-left: #14abb2;
+    --header-background-right: #233eb6;
+    --header-colour: #ffffff;
+    --tc-font-colour: #ffffff;
+    --tc-border-colour: #000000;
+    --tcheader-bg-colour: #007bff;
+    --tcbody-bg-colour: #172b38;
+}
+
+html {
+    line-height: 1.5;
+}
+
+body {
+    background-color: var(--body-background-col);
+}
+
+/* Gradient for the header */
+header {
+    background: linear-gradient(to right, var(--header-background-left) 0%, var(--header-background-right) 100%);
+    min-height: 4rem;
+    text-align: center;
+    color: var(--header-colour);
+    vertical-align: middle;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    font-size: 2.5rem;
+    font-weight: bolder;
+}
+
+h2 {
+    font-size: 2.0rem;
+}
+
+h3 {
+    font-size: 1.75rem;
+    font-weight: bolder;
+}
+
+h4 {
+    font-size: 1.5rem;
+    font-weight: bolder;
+}
+
+h5 {
+    font-size: 1.25rem;
+    font-weight: bolder;
+}
+
+p {
+    margin-bottom: 0.5rem;
+}
+
+hr {
+    height: 0.2rem;
+    border-color: var(--hr-colour);
+    background-color: var(--hr-colour);
+}
+
+span {
+    font-size: 1.5rem;
+}
+
+.row {
+    margin-top: 0.5rem;
+}
+
+.form-input {
+    padding: 0.3rem 0;
+    margin: 0.3rem 0;
+}
+
+.card {
+    min-width: 75%;
+    margin-right: 1rem;
+}
+
+.card-text {
+    font-weight: 400;
+}
+
+/* Team card header styling */
+.team-card-header {
+    color: var(--tc-font-colour);
+    border-color: var(--tc-border-colour);
+    border-style: solid;
+    border-width: 0.1rem;
+    border-radius: 0.4rem;
+    padding: 0.5rem 1.3rem 0.5rem 0.5rem;
+    background-color: var(--tcheader-bg-colour)
+}
+
+/* Team card body styling */
+.team-card-body {
+    color: var(--tc-font-colour);
+    border-color: var(--tc-border-colour);
+    border-style: solid;
+    border-width: 0rem 0.1rem 0.1rem;
+    border-radius: 0rem 0rem 0.4rem 0.4rem;
+    padding: 0.5rem 1.3rem 0.5rem 0.5rem;
+    background-color: #707070
+}
+
+@media only screen and (min-width: 768px) {
+
+    /* Adjust the card width for larger screens */
+    .card {
+        min-width: auto;
+    }
+}

@@ -1,6 +1,4 @@
-//Page HTML template
-const pageHTML =
-    `<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -24,6 +22,19 @@ const pageHTML =
             <section class="col-12 col-md">
                 <div class="row justify-content-around align-items-center justify-content-md-start" id="team-cards">
                     <!-- Team cards dynamically added by backend -->
+                    <div class="card">
+                        <div class="card-header team-card-header">
+                            <h5>Persons Name</h5>
+                            <h6>Persons Role</h6>
+                        </div>
+                        <div class="card-body team-card-body">
+                            <h6 class="card-title">ID: 1</h6>
+                            <p class="card-text">Email: robertpdavis@optusnet.com.au</p>
+                            <p class="card-text">Github: robertpdavis</p>
+
+                            <a href="#" class="btn btn-outline-primary btn-sm">Edit</a>
+                        </div>
+                    </div>
                 </div>
             </section>
         </section>
@@ -31,6 +42,4 @@ const pageHTML =
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </body>
 
-</html>`;
-
-module.exports = pageHTML;
+</html>
