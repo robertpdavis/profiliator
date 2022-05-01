@@ -22,8 +22,9 @@ const pageHTML =
     <main class="container">
         <section class="row">
             <section class="col-12 col-md">
-                <div class="row justify-content-around align-items-center justify-content-md-start" id="team-cards">
+                <div class="row justify-content-around align-items-center justify-content-md-center" id="team-cards">
                     <!-- Team cards dynamically added by backend -->
+                    %renderHTML%
                 </div>
             </section>
         </section>
