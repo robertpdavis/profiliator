@@ -32,6 +32,8 @@ function createMembers() {
 
         members.push(member);
 
+        console.log(`Team Member ${member.name} created.`)
+
         if (isManager || answerList.addAnother) {
             createMembers();
         } else {
@@ -44,39 +46,49 @@ function createMembers() {
 //Render HTML team member cards
 function renderTeamCards() {
     let renderHTML = "";
+    let role = ""
+    let name = "";
+    let id = "";
+    let email = "";
 
     if (members.length < 1) {
         return;
     }
     members.forEach((member) => {
+        role = member.getRole();
+        name = member.getName();
+        id = member.getId();
+        email = member.getEmail();
+
         let miscLabel;
         let miscData;
 
         switch (member.getRole()) {
             case "Manager":
                 miscLabel = "Office Number: ";
-                miscData = member.officeNumber;
+                miscData = member.getOfficeNum();
                 break;
             case "Engineer":
                 miscLabel = "Github: ";
-                miscData = member.github;
+                miscData = member.getGithub();
                 break;
             case "Intern":
                 miscLabel = "School: ";
-                miscData = member.school;
+                miscData = member.getSchool();
                 break;
             default:
         }
+
         renderHTML = renderHTML +
             `<div class="card">
                         <div class="card-header team-card-header">
-                            <h5>${member.name}</h5>
-                            <h6>${member.role}</h6>
+                            <h5>${name}</h5>
+                            <h6>${role}</h6>
                         </div>
                         <div class="card-body team-card-body">
-                            <h6 class="card-title">ID: ${member.id}</h6>
-                            <p class="card-text">Email: <a href="mailto:${member.email}">Send email</a></p>
-                            <p class="card-text">${miscLabel}${(member.role === "Engineer") ? '<a href="https://github.com/' + miscData + '" target="_blank">' + miscData + '</a>' : miscData}</p>
+                            <h6 class="card-title">ID: ${id}</h6>
+                            <p class="card-text">Email: <a href="mailto:${email}">${email}</a></p>
+                            <p class="card-text">${miscLabel}${(role === "Engineer") ? '<a href="https://github.com/' + miscData + '" target="_blank">' + miscData + '</a>' : miscData}</p>
                         </div>
                     </div>
                     `;
@@ -85,11 +97,9 @@ function renderTeamCards() {
 }
 
 function saveHTMLFile(HTML) {
-    fs.writeFile('./dist/index.html', HTML, (err) => {
-        if (err) {
-            throw new Error('index.html file cannot be saved');
-        }
-    });
+    fs.writeFile('./dist/index.html', HTML, (err) =>
+        err ? console.error(err) : console.log('Html file saved!')
+    );
 }
 
 //Initialisation function

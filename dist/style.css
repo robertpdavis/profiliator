@@ -10,6 +10,8 @@
     --tc-border-colour: #000000;
     --tcheader-bg-colour: #007bff;
     --tcbody-bg-colour: #172b38;
+    --a-link: #30aee0;
+    --a-hover: hotpink;
 }
 
 html {
@@ -75,6 +77,14 @@ hr {
 
 span {
     font-size: 1.5rem;
+}
+
+a:link {
+    color: var(--a-link);
+}
+
+a:hover {
+    color: var(--a-hover);
 }
 
 .row {
