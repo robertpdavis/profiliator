@@ -52,7 +52,7 @@ function renderTeamCards() {
         let miscLabel;
         let miscData;
 
-        switch (member.role) {
+        switch (member.getRole()) {
             case "Manager":
                 miscLabel = "Office Number: ";
                 miscData = member.officeNumber;
@@ -76,7 +76,7 @@ function renderTeamCards() {
                         <div class="card-body team-card-body">
                             <h6 class="card-title">ID: ${member.id}</h6>
                             <p class="card-text">Email: <a href="mailto:${member.email}">Send email</a></p>
-                            <p class="card-text">${miscLabel}${(member.role = "Engineer") ? '<a href="https://github.com/' + miscData + '" target="_blank">' + miscData + '</a>' : miscData}</p>
+                            <p class="card-text">${miscLabel}${(member.role === "Engineer") ? '<a href="https://github.com/' + miscData + '" target="_blank">' + miscData + '</a>' : miscData}</p>
                         </div>
                     </div>
                     `;
