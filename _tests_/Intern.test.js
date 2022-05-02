@@ -1,9 +1,9 @@
-const Employee = require('../lib/Employee');
+const Intern = require('../lib/Intern');
 
-describe('Employee class', () => {
+describe('Intern class', () => {
   describe("Initilization", () => {
     it('Should return an object containing a id property when a new instance is created', () => {
-      const obj = new Employee();
+      const obj = new Intern();
 
       expect("id" in obj).toEqual(true);
     });
@@ -11,7 +11,7 @@ describe('Employee class', () => {
     it("Should set 'name' when created", () => {
       const name = "Test Name";
 
-      const obj = new Employee(name);
+      const obj = new Intern(name);
 
       expect(obj.name).toBe("Test Name");
     });
@@ -19,7 +19,7 @@ describe('Employee class', () => {
     it("Should set 'email' when created", () => {
       const email = "testname@company.com";
 
-      const obj = new Employee("", "", email);
+      const obj = new Intern("", "", email);
 
       expect(obj.email).toBe("testname@company.com");
     });
@@ -28,19 +28,24 @@ describe('Employee class', () => {
     const name = "Test Name";
     const id = "1";
     const email = "testname@company.com";
-    const obj = new Employee(name, id, email);
+    const school = "University of NSW";
+    const obj = new Intern(name, id, email, school);
 
-    it("Should return the employee's name when getName() method is called", () => {
+    it("Should return the intern's name when getName() method is called", () => {
 
       expect(obj.getName()).toBe("Test Name");
     })
-    it("Should return the employee's Id when getId() method is called", () => {
+    it("Should return the intern's Id when getId() method is called", () => {
 
       expect(obj.getId()).toBe("1");
     })
-    it("Should return the employee's email when getEmail() method is called", () => {
+    it("Should return the intern's email when getEmail() method is called", () => {
 
       expect(obj.getEmail()).toBe("testname@company.com");
+    })
+    it("Should return the intern's school when getSchool() method is called", () => {
+
+      expect(obj.getSchool()).toBe("University of NSW");
     })
   })
 })
