@@ -63,7 +63,3 @@ The tests test the initialisation of the classes and class methods.
 * Email: robertpdavis@optusnet.com.au
 
 README file created by ['Easy Readme'](https://github.com/robertpdavis/easy-readme)
-
-https://drive.google.com/file/d/12_OdE-6QN_FOkyTyMq8d8iqNKrAL3uTq/view
-
-https://drive.google.com/file/d/1_UUvR6B5IsZaalkc8TD1QQutMpCO_YwI/view
