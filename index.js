@@ -16,7 +16,7 @@ const prompter = new Prompter();
 //Array to hold created members
 const members = [];
 
-//Creates members from user input prompts and adds to memmbers array
+//Recursive function to create members from user input prompts and adds toa global memmbers array
 function createMembers() {
     let member;
     let isManager = (members.length === 0);
@@ -51,9 +51,11 @@ function renderTeamCards() {
     let id = "";
     let email = "";
 
+    //Checks to see if members have been added
     if (members.length < 1) {
         return;
     }
+    //Loops through each memeber and appends html text file
     members.forEach((member) => {
         role = member.getRole();
         name = member.getName();
@@ -93,9 +95,11 @@ function renderTeamCards() {
                     </div>
                     `;
     })
+    //Adds creates html text file into the html template which is then sent to saveHTMLFile to save. 
     saveHTMLFile(pageHTML.replace("%renderHTML%", renderHTML));
 }
 
+//Function to save the final rendered html file into the dist directory
 function saveHTMLFile(HTML) {
     fs.writeFile('./dist/index.html', HTML, (err) =>
         err ? console.error(err) : console.log('Html file saved!')
